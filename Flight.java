@@ -60,11 +60,21 @@ public class Flight implements FlightInterface {
 
 	@Override
 	public boolean cancel(int bookingNumber) {
-		return false;
+		boolean Status = false;
+		for (int i = 0; i < row * rowLength; i++) {
+			if (passengerList[i] != null
+					&& bookingNumber == passengerList[i].getBookingNumber()) {
+				Status = true;
+				passengerList[i] = null;
+				break;
+			}
+		}
+		return Status;
 	}
+
 
 	@Override
 	public Passenger[] getPassengerList() {
-		return new Passenger[0];
+		return passengerList;
 	}
 }
