@@ -25,8 +25,37 @@ public class Flight implements FlightInterface {
 	}
 
 	@Override
-	public int[] reserve(String[] names) {
-		return new int[0];
+// 预订座位
+	public int[] reserve(String names[]) {
+		if (names.length > rowLength)
+			return fail;
+		int i = 0, j = 0, k = 0;
+
+		boolean flag = false;
+
+		labelA: for (i = 0; i <= row - 1; i++) {
+			for (j = 0; j <= rowLength - names.length; j++) {
+
+				for (k = j; k <= j + names.length - 1; k++) {
+					if (passengerList[i * rowLength + k] != null)
+						break;
+				}
+				if (k > j + names.length - 1) {
+					flag = true;
+					break labelA;
+				}
+			}
+		}
+		if (!flag)
+			return fail;
+		// 从第i行第j列开始分配座位
+		int[] bn = new int[names.length]; 				//每一个旅客返回一个预订号
+		for (k = j; k <= j + names.length - 1; k++) {
+			bn[k - j] = i * rowLength + k + 1; 			//产生预订号，names[0]对应 bn[0]
+			passengerList[i * rowLength + k] = new Passenger(names[k - j], i
+					* rowLength + k + 1, i, k);
+		}
+		return bn;
 	}
 
 	@Override
