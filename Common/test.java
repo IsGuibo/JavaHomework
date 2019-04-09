@@ -7,6 +7,8 @@ public class test {
         System.out.println(appendCount(str));
         System.out.println(str.substring(10,14));//取出子字符串"test"
 
+
+
     }
     //统计该字符串中字母s出现的次数
     private static int appendCount(String str){
