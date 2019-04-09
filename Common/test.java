@@ -14,6 +14,7 @@ public class test {
     private static int appendCount(String str){
         int count =0;
         char[] chars=str.toCharArray();//将本字符串复制到一个字符数组Char[] str中.// toCharArray
+
         for(char c:chars){
             if(c==115){
                 count++;
