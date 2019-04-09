@@ -5,6 +5,7 @@ public class test {
     public static void main(String[] args) {
         final   String str = "this is a test of java";
         System.out.println(appendCount(str));
+        System.out.println(str.substring(10,14));//取出子字符串"test"
 
     }
     //统计该字符串中字母s出现的次数
@@ -18,4 +19,5 @@ public class test {
         }
         return count;
     }
+
 }
