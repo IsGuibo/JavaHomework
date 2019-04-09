@@ -6,9 +6,7 @@ public class test {
         final   String str = "this is a test of java";
         System.out.println(appendCount(str));
         System.out.println(str.substring(10,14));//取出子字符串"test"
-
-
-
+        InitialCapitalization(str);
     }
     //统计该字符串中字母s出现的次数
     private static int appendCount(String str){
@@ -21,6 +19,15 @@ public class test {
             }
         }
         return count;
+    }
+    //将字符串中每个单词的第一个字母变成大写， 输出到控制台。//用正则表达式
+    private static  void  InitialCapitalization(String str){
+        String[] b =str.split("\\s+");
+        StringBuffer sb =new StringBuffer();
+        for (String aB : b) {
+            sb.append(String.valueOf(aB.charAt(0)).toUpperCase()).append(aB.substring(1)).append(" ");
+        }
+        System.out.println(sb);
     }
 
 }
