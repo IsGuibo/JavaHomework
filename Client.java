@@ -1,4 +1,4 @@
-package com.example.lib.Passenger;
+package com.example.lib.JavaHomework.Passenger;
 import java.util.*;
 import java.io.*;
 
