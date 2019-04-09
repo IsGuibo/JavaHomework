@@ -13,7 +13,7 @@ public class test {
     //统计该字符串中字母s出现的次数
     private static int appendCount(String str){
         int count =0;
-        char[] chars=str.toCharArray();
+        char[] chars=str.toCharArray();//将本字符串复制到一个字符数组Char[] str中.// toCharArray
         for(char c:chars){
             if(c==115){
                 count++;
