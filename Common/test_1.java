@@ -1,11 +1,11 @@
 package com.example.lib.JavaHomework.Common;
 
 
-public class test {
+public class test_1 {
     public static void main(String[] args) {
-        final String str = "this is a test of java";
+        final String str = "this is a test_1 of java";
         System.out.println(appendCount(str));
-        System.out.println(str.substring(10, 14));//取出子字符串"test"
+        System.out.println(str.substring(10, 14));//取出子字符串"test_1"
         InitialCapitalization(str);
 // 用两种方式实现该字符串的倒序输出。(用StringBuffer和for循环方式分别实现)
         StringBuffer sb = new StringBuffer(str);
