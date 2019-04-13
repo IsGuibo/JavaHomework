@@ -11,9 +11,14 @@ public class test_4 {
         Pattern p = Pattern.compile(regExp);
         Matcher m = p.matcher(str);
         // 将一个字符串中所有的ip地址打印出来
-        String parentString="HuangGuibo_IP:127.168.220.221";
-        String regexString=".*(\\d{3}(\\.\\d{1,3}){3}).*";
+        String parentString="HuangGuibo_IP:127.168.220.221q";
+        String regexString=".*(w1\\d{3}(\\.\\d{1,3}){3}).*";
         String IPString=parentString.replaceAll(regexString,"$1");
-        System.out.print(IPString);
+        System.out.println(IPString);
+        //将字符串中连续出现的字符压缩成一个。比如aaabbbccccd，压缩后变成abcd。
+        String s = "aaabbbccccd";
+        s = s.replaceAll("([a-z!])\\1+", "$1");
+        System.out.println(s);
+
     }
 }
