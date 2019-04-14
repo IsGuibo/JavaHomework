@@ -11,9 +11,9 @@ public class test_4 {
         Pattern p = Pattern.compile(regExp);
         System.out.println(p.matcher(str).matches());
         // 将一个字符串中所有的ip地址打印出来
-        String parentString="HuangGuibo_IP:127.168.220.221q";
-        String regexString=".*(\\d{3}(\\.\\d{1,3}){3}).*";
-        System.out.println(parentString.replaceAll(regexString,"$1"));
+        String parentString = "HuangGuibo_IP:127.168.220.221q";
+        String regexString = ".*(\\d{3}(\\.\\d{1,3}){3}).*";
+        System.out.println(parentString.replaceAll(regexString, "$1"));
         //将字符串中连续出现的字符压缩成一个。比如aaabbbccccd，压缩后变成abcd。
         str = "aaabbbccccd";
         System.out.println(str.replaceAll("([a-z])\\1+", "$1"));
@@ -23,14 +23,16 @@ public class test_4 {
         System.out.println(p.matcher(str).matches());
         //将一个字符串中的所有整数提取出来，保存在一维数组中。比如”ae256dd—w348e6”，提取出256,348,6三个整数
         str = "ae256dd—w348e6";
-        System.out.println( str.replaceAll("(\\D+)","|"));
+        System.out.println(str.replaceAll("(\\D+)", "|"));
         //文本替换：将字符串中所有的”pupel”替换为”pupil”。
         str = "pupel";
-        System.out.println(  str.replaceAll("pupel","pupil"));
-
-
-
-
-
+        System.out.println(str.replaceAll("pupel", "pupil"));
+        //从一个字符串中提取以%cxll=开头，右部是%的字符串（不包含%）。
+        str = "%...%CXLL=add1,31,123.12%CXLL=add2,32,124%CXLL=,33,125.12%LL=-121.11";
+        p = Pattern.compile("(%CXLL=.*?(?=%))");
+        Matcher matcher = p.matcher(str);
+        while (matcher.find()) {
+            System.out.println(matcher.group(1));
+        }
     }
 }
