@@ -19,6 +19,15 @@ public class test_6 {
         for (int aB : b) {
             System.out.print(aB+" ");
         }
+        //将数组元素进行排序；输入一个数值，再查找该数在数组中哪个位置
+        System.out.println("\n请输入查找值：");
+        Scanner scanner = new Scanner(System.in);
+        if (Arrays.binarySearch(b, scanner.nextInt()) < 0) {
+            System.out.println("元素不存在");
+        } else {
+            System.out.println("元素位置："+Arrays.binarySearch(b,scanner.nextInt()));
+        }
+
 
     }
 
