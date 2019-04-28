@@ -13,7 +13,12 @@ public class test_6 {
         }
         System.out.println();
         int[] b = a.clone();
-
+        //将数组元素进行排序
+        System.out.println("排序后");
+        Arrays.sort(b);
+        for (int aB : b) {
+            System.out.print(aB+" ");
+        }
 
     }
 
