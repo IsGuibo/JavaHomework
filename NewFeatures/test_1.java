@@ -31,9 +31,9 @@ public class test_1 {
                 }
             });
             //用lambda的形式完成参数Consumer<Apple> c的传递
-            ConsumerApple(apples, (Apple aApple) ->{
+           // ConsumerApple(apples, (Apple aApple) ->{
 
-            });
+         //   });
 
 
 
