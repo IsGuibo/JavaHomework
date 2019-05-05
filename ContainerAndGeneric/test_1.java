@@ -29,8 +29,11 @@ public class test_1 {
         while (iter.hasNext()) {
                     System.out.println(iter.next());
         }
-
-
+        /*foreach写法更简单
+             for (Student aStudent : treeSet) {
+            System.out.println(aStudent);
+            }
+        */
     }
 }
 //创建学生类，包含学号、姓名、综合测评总分。
