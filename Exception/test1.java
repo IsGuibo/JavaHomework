@@ -16,7 +16,7 @@ public class test1 {
     public static void main(String[] args) throws MyException {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        parseInt(str);
+        System.out.println(parseInt(str));
     }
 }
 class Tool{
