@@ -1,5 +1,10 @@
 package com.example.lib.JavaHomework.Exception;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static com.example.lib.JavaHomework.Exception.Tool.parseInt;
+
 /*
 自定义异常类，用来描述数字格式异常。
 自定义一个工具类，有一个public static int parseInt(String str)静态方法，
@@ -8,17 +13,28 @@ import java.util.Scanner;
 并进行异常捕获处理。
 */
 public class test1 {
-    static class  Exception {
-        static int parseInt(String str) throws NumberFormatException {
-
-                return Integer.parseInt(str);
-        }
+    public static void main(String[] args) throws MyException {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        parseInt(str);
     }
-    public static void main(String[] args) {
-        try{
-            System.out.println(Exception.parseInt(new Scanner(System.in).next()));
-        }catch (NumberFormatException e){
-            System.out.println(e);
+}
+class Tool{
+    static int parseInt(String str) throws MyException {
+        if(!isNumber(str)){
+            throw new MyException("不是数字");
         }
+        return Integer.parseInt(str);
+    }
+    private static boolean isNumber(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        Matcher isNum = pattern.matcher(str);
+        return isNum.matches();
+    }
+}
+class MyException extends Exception {
+
+    MyException(String message) {
+        super(message);
     }
 }
